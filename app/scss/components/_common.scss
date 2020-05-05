@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $main-font;
+  background-color: $bg-color;
+  font-size: 16px;
+}
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input::-webkit-input-placeholder {
+  color: $gray-2;
+}
+
+.title-h1 {
+  font-size: 80px;
+  line-height: 82px;
+  font-weight: 700;
+  color: $white;
+  text-transform: capitalize;
+
+  @include media-breakpoint-down(md) {
+    font-size: 58px;
+    line-height: 62px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: 48px;
+    line-height: 46px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    font-size: 38px;
+    line-height: 40px;
+  }
+}
+
+.title-h2 {
+  font-size: 48px;
+  line-height: 50px;
+  font-weight: 700;
+  color: $black-3;
+
+  @include media-breakpoint-down(md) {
+    font-size: 40px;
+    line-height: 42px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+
+  @include media-breakpoint-down(md) {
+    flex-direction: row;
+  }
+}
+
+.arrow-right {
+  position: relative;
+  &::before {
+    @include absolute(top 50% right -10px);
+
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+
+    border-left: 10px solid $white;
+    transform: translateY(-50%);
+  }
+}
+
+.arrow-left {
+  position: relative;
+  &::before {
+    @include absolute(top 50% left -10px);
+
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+
+    border-right: 10px solid $white;
+    transform: translateY(-50%);
+  }
+}
